@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\publish\GeoService</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Common.dll">
+      <publishTime>01/17/2015 22:07:35</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/21/2014 23:33:52</publishTime>
+    </File>
+    <File Include="bin/GeoServiceData.dll">
+      <publishTime>02/25/2015 22:33:39</publishTime>
+    </File>
+    <File Include="bin/GeoServiceEnquiry.dll">
+      <publishTime>02/25/2015 22:33:41</publishTime>
+    </File>
+    <File Include="bin/GeoServiceProvider.dll">
+      <publishTime>02/25/2015 22:33:40</publishTime>
+    </File>
+    <File Include="GeoServiceEnquiryServiceImpl.svc">
+      <publishTime>11/19/2014 23:13:11</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/25/2015 22:33:41</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

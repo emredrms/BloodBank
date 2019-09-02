@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9CF5C63-DADB-4C9B-825A-C591196CEC04}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BloodBankProvider</RootNamespace>
+    <AssemblyName>BloodBankProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\AnnouncementController.cs" />
+    <Compile Include="Controller\ContactController.cs" />
+    <Compile Include="Controller\ContentController.cs" />
+    <Compile Include="Controller\MentionTwitterController.cs" />
+    <Compile Include="Controller\MessageController.cs" />
+    <Compile Include="Controller\MessageLogController.cs" />
+    <Compile Include="Controller\SystemUserController.cs" />
+    <Compile Include="Helper\BloodBankConstant.cs" />
+    <Compile Include="Model\AnnouncementDTO.cs" />
+    <Compile Include="Model\ContactDTO.cs" />
+    <Compile Include="Model\ContentDTO.cs" />
+    <Compile Include="Model\ContentTypeDTO.cs" />
+    <Compile Include="Model\MentionTwitterDTO.cs" />
+    <Compile Include="Model\MessageDTO.cs" />
+    <Compile Include="Model\MessageLogDTO.cs" />
+    <Compile Include="Model\SearchByCriteriaResponseDTO.cs" />
+    <Compile Include="Model\SystemUserDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.csproj">
+      <Project>{c2fdb370-1d83-4271-baf9-3722aad41495}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BloodBankData\BloodBankData.csproj">
+      <Project>{a3b05b03-0938-4052-9a0e-c591df85cf25}</Project>
+      <Name>BloodBankData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

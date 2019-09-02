@@ -1,0 +1,54 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+        $('.li-item').removeClass('current-menu-item');
+        var page = window.location.pathname;
+
+        if (page == "/") {
+            $('#li-1').addClass('current-menu-item');
+        } else if (page == "/Kurumsal/Hakkimizda") {
+            $('#li-2').addClass('current-menu-item');
+        } else if (page == "/Kurumsal/Faaliyetler") {
+            $('#li-3').addClass('current-menu-item');
+        } else if (page == "/Kurumsal/BasinOdasi") {
+            $('#li-4').addClass('current-menu-item');
+        } else if (page == "/Kurumsal/SSS") {
+            $('#li-5').addClass('current-menu-item');
+        } else if (page == "/Kurumsal/BizeUlasin") {
+            $('#li-6').addClass('current-menu-item');
+        } 
+    });
+</script>
+<header class="h12 sticky-enabled no-topbar">
+    <section class="main-header">
+        <p class="title">
+            <a href='@Url.Action("Index","Home")'><img src="@Url.Content("~/Images/kan_bankasi.jpg")" alt="Türkiye Kan Bankası" width="125" height="35"></a>
+            <span>Türkiye Kan Bankası</span>
+        </p>
+        <nav class="social">
+            <ul><!--
+                <li><a href="#" class="facebook">Facebook</a></li>
+                <li><a href="#" class="twitter">Twitter</a></li>
+                    -->
+            </ul>
+        </nav>
+        <nav class="mainmenu">
+            <ul>
+                <li id="li-1" class="li-item"><a href='@Url.Action("Index","Home")'>Anasayfa</a></li>
+                <li id="li-2" class="li-item"><a href='@Url.Action("Index", "Content", new { name = "Hakkimizda" })'>Hakkımızda</a></li>
+                <li id="li-3" class="li-item"><a href='@Url.Action("Index", "Content", new { name = "Faaliyetler" })'>Projenin Amacı</a></li>
+                <li id="li-4" class="li-item"><a href='@Url.Action("Index", "Content", new { name = "BasinOdasi" })'>Basın Odası</a></li>
+                <li id="li-5" class="li-item"><a href='@Url.Action("Index", "Content", new { name = "SSS" })'>Sıkça Sorulan Sorular</a></li>
+                <li id="li-6" class="li-item"><a href='@Url.Action("Index", "Content", new { name ="BizeUlasin" })'>Bize Ulaşın</a></li>
+            </ul>
+            <select id="sec-nav" name="sec-nav">
+                <option value='@Url.Action("Index","Home")'>Anasayfa</option>
+                <option value='@Url.Action("Index", "Content", new { id=1, name = "Hakkimizda" })'>Hakkımızda</option>
+                <option value='@Url.Action("Index", "Content", new { id=2, name = "Faaliyetler" })'>Faaliyetler</option>
+                <option value='@Url.Action("Index", "Content", new { id=3, name = "BasınOdasi" })'>Basın Odası</option>
+                <option value='@Url.Action("Index", "Content", new { id=4, name = "SSS" })'>Sıkça Sorulan Sorular</option>
+                <option value='@Url.Action("Index", "Content", new { id=6, name ="BizeUlasin" })'>Bize Ulaşın</option>
+            </select>
+        </nav>
+        <div class="clear"></div>
+    </section>
+</header>

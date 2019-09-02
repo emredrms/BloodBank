@@ -1,0 +1,12 @@
+C:\Project\GeoService\GeoServiceProvider\bin\Release\GeoServiceProvider.dll.config
+C:\Project\GeoService\GeoServiceProvider\bin\Release\GeoServiceProvider.dll
+C:\Project\GeoService\GeoServiceProvider\bin\Release\GeoServiceProvider.pdb
+C:\Project\GeoService\GeoServiceProvider\bin\Release\Common.dll
+C:\Project\GeoService\GeoServiceProvider\bin\Release\EntityFramework.dll
+C:\Project\GeoService\GeoServiceProvider\bin\Release\GeoServiceData.dll
+C:\Project\GeoService\GeoServiceProvider\bin\Release\Common.pdb
+C:\Project\GeoService\GeoServiceProvider\bin\Release\GeoServiceData.pdb
+C:\Project\GeoService\GeoServiceProvider\bin\Release\EntityFramework.xml
+C:\Project\GeoService\GeoServiceProvider\obj\Release\GeoServiceProvider.csprojResolveAssemblyReference.cache
+C:\Project\GeoService\GeoServiceProvider\obj\Release\GeoServiceProvider.dll
+C:\Project\GeoService\GeoServiceProvider\obj\Release\GeoServiceProvider.pdb

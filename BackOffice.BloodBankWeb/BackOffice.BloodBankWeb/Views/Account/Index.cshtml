@@ -1,0 +1,81 @@
+﻿@model BackOffice.BloodBankWeb.Models.AccountModel
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Türkiye Kan Bankası - Yönetim Paneli</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Html.Partial("_PReferenceCSS")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#loginForm").submit(function () {
+                return validateLogin();
+            });
+        });
+
+        function validateLogin() {
+            var validForm = true;
+            if ($('#UserName').val() == null || $('#UserName').val() == "") {
+                validForm = false;
+                $("#user-name-validation").show();
+            }
+            else {
+                $("#user-name-validation").hide();
+            }
+            if ($('#Password').val() == null || $('#Password').val() == "") {
+                validForm = false;
+                $("#password-validation").show();
+            }
+            else {
+                $("#password-validation").hide();
+            }
+            return validForm;
+        }
+    </script>
+</head>
+<body class="body-Login-back">
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Giriş Paneli</h3>
+                </div>
+                <div class="panel-body">
+                    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @id = "loginForm" }))
+                    {
+                        <fieldset>
+                            <div class="form-group has-error">
+                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeHolder = "Kullanıcı Adı" })
+                                <label id="user-name-validation" class="control-label" for="name" style="display: none">(*) zorunludur</label>
+                            </div>
+                            <div class="form-group has-error">
+                                @Html.TextBoxFor(m => m.Password, new { @placeHolder = "Şifre", @class = "form-control", @type = "password" })
+                                <label id="password-validation" class="control-label" for="password" style="display: none">(*) zorunludur</label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    @Html.CheckBoxFor(m => m.RememberMe, new { @text = "Beni Hatırla" })
+                                    Beni Hatırla
+                                </label>
+                            </div>
+                            <button id="login-button" name="submit" type="submit" class="btn btn-lg btn-success btn-block">Giriş Yap</button>
+                            @if (ViewBag.ErrorMessage != null)
+                            {
+                                <label id="password-validation" class="control-label" for="password">@ViewBag.ErrorMessage</label>
+                            }
+                        </fieldset>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

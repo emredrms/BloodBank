@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Türkiye Kan Bankası - Yönetim Paneli</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Html.Partial("_PReferenceCSS")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Html.Partial("_PReferenceJS")
+</head>
+<body>
+    <header></header>
+    <div id="wrapper">
+        @Html.Partial("_PHeader")
+        @Html.Partial("_PLeftMenu")
+        <div id="page-wrapper">
+            @RenderSection("featured", required: false)
+            @RenderBody()
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>

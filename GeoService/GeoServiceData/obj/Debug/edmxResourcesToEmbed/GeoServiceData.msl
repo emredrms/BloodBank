@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbD6F0F326BCModelStoreContainer" CdmEntityContainer="Geo_DataSource_Entities">
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="dbD6F0F326BCModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="dbD6F0F326BCModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="District">
+      <EntityTypeMapping TypeName="dbD6F0F326BCModel.District">
+        <MappingFragment StoreEntitySet="District">
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State">
+      <EntityTypeMapping TypeName="dbD6F0F326BCModel.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

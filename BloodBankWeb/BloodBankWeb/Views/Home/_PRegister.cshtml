@@ -1,0 +1,64 @@
+﻿@model BloodBankWeb.Models.UserRegisterModel
+<article class="slider-content">
+    <section class="content">
+        <section class="columns">
+            <div class="col2">
+                    @using (Ajax.BeginForm("RegisterUser", "Home", new AjaxOptions { OnBegin = "validateRegisterInputs", OnComplete = "completeRegister" }, new { @class = "form1" }))
+                    {
+                    <p id="mail-column">
+                        <label for="text">E Posta</label>
+                        @Html.TextBoxFor(m => m.Email)
+                        <span id="mail-column-validation" class="validation-error">(*) zorunludur</span>
+                    </p>
+                    <p id="register-blood-column">
+                        <label for="select2">Kan Grubu</label>
+                        <span class="select">
+                            @Html.DropDownListFor(m => m.UserBloodGroup, BloodBankWeb.Models.Helper.GetBloodBankGroup(), new { @class = "select" })
+                        </span>
+                        <span id="register-blood-column-validation" class="validation-error">(*) zorunludur</span>
+                    </p>
+                    <p id="register-gender-column">
+                        <label for="select2">Cinsiyet</label>
+                        <span class="select">
+                            @Html.DropDownListFor(m => m.UserGender, BloodBankWeb.Models.Helper.GetGender(false), new { @class = "select" })
+                        </span>
+                        <span id="register-gender-column-validation" class="validation-error">(*) zorunludur</span>
+                    </p>
+                    <p id="name-column">
+                        <label for="text">Ad</label>
+                        @Html.TextBoxFor(m => m.Name)
+                        <span id="name-column-validation" class="validation-error">(*) zorunludur</span>
+                    </p>
+                    <p id="surname-column">
+                        <label for="text">Soyad</label>
+                        @Html.TextBoxFor(m => m.Surname)
+                        <span id="surname-column-validation" class="validation-error">(*) zorunludur</span>
+                    </p>
+                    <p id="register-city-column">
+                        <label for="select2">İl</label>
+                        <span class="select">
+                            @Html.DropDownListFor(m => m.UserCityId, BloodBankWeb.Models.Helper.GetCities("90"), new { @class = "select" })
+                        </span>
+                        <span id="register-city-column-validation" class="validation-error">(*) zorunludur</span>
+                    </p>
+                    <p id="register-district-column">
+                        <label for="select">İlçe</label>
+                        <span class="select">
+                            @Html.DropDownListFor(m => m.UserDistrictId, BloodBankWeb.Models.Helper.GetDistrictByCity("0"), new { @class = "select" })
+                        </span>
+                        <span id="register-district-column-validation" class="validation-error">(*) zorunludur</span>
+                    </p>
+                    <p id="phone-column">
+                        <label for="text">Cep Telefonu</label>
+                        @Html.TextBoxFor(m => m.Phone, new { @class = "phone" })
+                        <span id="phone-column-validation" class="validation-error">(*) zorunludur</span>
+                    </p>
+                    <p class="submit">
+                        <button id="register-button" type="submit" name="submit" value="2">Kaydet</button>
+                    </p>
+                    }
+
+            </div>
+        </section>
+    </section>
+</article>

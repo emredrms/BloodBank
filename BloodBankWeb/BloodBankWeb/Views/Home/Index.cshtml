@@ -1,0 +1,256 @@
+﻿@{
+
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('.slider-control').click(function () {
+            $('.slider-control').removeClass('active');
+            $(this).addClass('active');
+
+            $('.slider-content').css('display', 'none');
+            $('.slider-content').css('opacity', '0');
+
+            var index = $('.slider-control').index(this);
+
+            $('.slider-content').eq(index).css('display', 'block');
+            $('.slider-content').eq(index).css('opacity', '1');
+        });
+
+        $("#CityId").change(function () {
+            $('#DistrictId').find('option').remove();
+            $.ajax({
+                url: '@Url.Action("GetDistrictByCity", "Home")',
+                data: { cityCode: $(this).val() },
+                success: function (data) {
+                    $.each(data, function (i, item) {
+                        $('#DistrictId').append("<option value=" + item.Value + ">" + item.Text + "</option>");
+
+                    });
+                },
+                complete: function (data) {
+
+                }
+            });
+        });
+
+        $("#UserCityId").change(function () {
+            $('#UserDistrictId').find('option').remove();
+            $.ajax({
+                url: '@Url.Action("GetDistrictByCity", "Home")',
+                data: { cityCode: $(this).val() },
+                success: function (data) {
+                    $.each(data, function (i, item) {
+                        $('#UserDistrictId').append("<option value=" + item.Value + ">" + item.Text + "</option>");
+
+                    });
+                },
+                complete: function (data) {
+
+                }
+            });
+
+        });
+
+        $('#Email').change(function () {
+            if (!validEmailAddress($(this).val())) {
+                $('#mail-column-validation').html("Gecerli bir e-posta adresi giriniz");
+                $("#mail-column-validation").fadeIn("slow");
+            }
+            else {
+                if (avaliableEmail($('#Email').val())) {
+                    $('#mail-column-validation').html("");
+                    $("#mail-column-validation").fadeOut("slow");
+                }
+            }
+        });
+
+        $("#searchForm").submit(function () {
+            return validateSearch();
+        });
+    })
+
+    function validateSearch() {
+
+        var validForm = true;
+        if ($('#CityId').val() == null || $('#CityId').val() == "") {
+            validForm = false;
+            $("#city-column-validation").fadeIn("slow");
+        }
+        else {
+            $("#city-column-validation").fadeOut("slow");
+        }
+        if ($('#DistrictId').val() == null || $('#DistrictId').val() == "") {
+            validForm = false;
+            $("#district-column-validation").fadeIn("slow");
+        }
+        else {
+            $("#district-column-validation").fadeOut("slow");
+        }
+        if ($('#BloodGroup').val() == null || $('#BloodGroup').val() == "") {
+            validForm = false;
+            $("#blood-column-validation").fadeIn("slow");
+        }
+        else {
+            $("#blood-column-validation").fadeOut("slow");
+        }
+        if (validForm == true) {
+            $('body').loadingIndicator();
+        }
+        return validForm;
+
+    }
+
+    function validateRegisterInputs() {
+
+        var validForm = true;
+
+        if (!validEmailAddress($('#Email').val())) {
+            validForm = false;
+        }
+
+
+        if ($('#Email').val() == null || $('#Email').val() == "") {
+            $("#mail-column-validation").fadeIn("slow");
+            validForm = false;
+        }
+        else {
+            if (!avaliableEmail($('#Email').val())) {
+                validForm = false;
+            } else {
+                $("#mail-column-validation").fadeOut("slow");
+            }
+
+        }
+        if ($('#UserBloodGroup').val() == null || $('#UserBloodGroup').val() == "") {
+            $("#register-blood-column-validation").fadeIn("slow");
+            validForm = false;
+        }
+        else {
+            $("#register-blood-column-validation").fadeOut("slow");
+        }
+        if ($('#UserGender').val() == null || $('#UserGender').val() == "") {
+            $("#register-gender-column-validation").fadeIn("slow");
+            validForm = false;
+        }
+        else {
+            $("#register-gender-column-validation").fadeOut("slow");
+        }
+        if ($('#Name').val() == null || $('#Name').val() == "") {
+            $("#name-column-validation").fadeIn("slow");
+            validForm = false;
+        }
+        else {
+            $("#name-column-validation").fadeOut("slow");
+        }
+        if ($('#Surname').val() == null || $('#Surname').val() == "") {
+            $("#surname-column-validation").fadeIn("slow");
+            validForm = false;
+        }
+        else {
+            $("#surname-column-validation").fadeOut("slow");
+        }
+        if ($('#UserCityId').val() == null || $('#UserCityId').val() == "") {
+            $("#register-city-column-validation").fadeIn("slow");
+            validForm = false;
+        }
+        else {
+            $("#register-city-column-validation").fadeOut("slow");
+        }
+        if ($('#UserDistrictId').val() == null || $('#UserDistrictId').val() == "") {
+            $("#register-district-column-validation").fadeIn("slow");
+            validForm = false;
+        }
+        else {
+            $("#register-district-column-validation").fadeOut("slow");
+        }
+        if ($('#Phone').val() == null || $('#Phone').val() == "") {
+            $("#phone-column-validation").fadeIn("slow");
+            validForm = false;
+        }
+        else {
+            $("#phone-column-validation").fadeOut("slow");
+        }
+        if (validForm == true) {
+            $('body').loadingIndicator();
+        }
+        return validForm;
+    }
+
+    function completeRegister() {
+
+        $('#UserBloodGroup').val('0');
+        $('#UserGender').val('0');
+        $('#Name').val('');
+        $('#Surname').val('');
+        $('#UserCityId').val('0');
+        $('#UserDistrictId').val('0');
+        $('#Phone').val('');
+        $('#Email').val('');
+        $('.loading-indicator-wrapper').hide();
+        $.dialog.alert('', 'Kayit islemi basarili bir sekilde gerceklesti', function () {
+            $.dialog.alert("Sonuc", "");
+        });
+    }
+
+    function completedSearch() {
+
+        if ('@TempData["NoResult"]' != null) {
+            $.dialog.alert('', 'Aradiginiz kriterlere uygun sonuc bulunamamistir', function () {
+                $.dialog.alert("Sonuc", "");
+            });
+
+        }
+        $('.loading-indicator-wrapper').hide();
+    }
+
+
+
+    function avaliableEmail(email) {
+        var value = true;
+        $.ajax({
+            url: '@Url.Action("AvaliableEmail", "Home")',
+            data: { email: email },
+            success: function (data) {
+                if (!data) {
+                    data = false;
+                    $('#mail-column-validation').html("Girmis oldugunuz e-posta adresi kullanilmaktadir");
+                    $("#mail-column-validation").fadeIn("slow");
+                }
+                else {
+                    $("#mail-column-validation").fadeOut("slow");
+                    $('#mail-column-validation').html("E-posta zorunludur");
+                }
+            },
+            complete: function (data) {
+
+            }
+        });
+
+        return value;
+    }
+
+
+</script>
+<section class="slider7">
+    <div class="p05">
+        <div>
+            <div class="slider">
+                @Html.Partial("_PSearch")
+                @Html.Partial("_PVideo")
+                @Html.Partial("_PRegister")
+                @Html.Partial("_PTwitter")
+                @Html.Partial("_PFacebook")
+            </div>
+            <div class="controls">
+                <ul class="slider-titles">
+                    <li class="slider-control active"><a href="#" class="camera">Kan Duyurusu Yap </a></li>
+                    <li class="slider-control"><a href="#" class="info">Kan Arama Rehberi</a></li>
+                    <li class="slider-control"><a href="#" class="cart">Kan Gönüllüsü Ol</a></li>
+                    <li class="slider-control"><a href="#" class="people">Twitter</a></li>
+                    <li class="slider-control"><a href="#" class="mail">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

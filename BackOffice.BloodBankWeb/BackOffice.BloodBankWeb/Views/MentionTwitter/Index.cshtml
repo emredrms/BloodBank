@@ -1,0 +1,158 @@
+﻿@model BackOffice.BloodBankWeb.Models.MentionTwitter
+@{
+    ViewBag.Title = "Kan Bankası";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        bindMention();
+
+        $('#addPop').click(function () {
+            var selectedValue = $('#passMentionList').val();
+            if (selectedValue != null && selectedValue.length > 0) {
+                $('#passMentionList :selected').each(function (i, selected) {
+                    $('#actvMentionList').append("<option value=" + $(selected).val() + ">" + $(selected).text() + "</option>");
+                    $("#passMentionList option[value='" + $(selected).val() + "']").remove();
+                });
+            } else {
+                alert("Lütfen pasif listeden kayıt seçiniz");
+            }
+
+            return false;
+        });
+
+        $('#removePop').click(function () {
+            var selectedValue = $('#actvMentionList').val();
+            if (selectedValue != null && selectedValue.length > 0) {
+                $('#actvMentionList :selected').each(function (i, selected) {
+                    $('#passMentionList').append("<option value=" + $(selected).val() + ">" + $(selected).text() + "</option>");
+                    $("#actvMentionList option[value='" + $(selected).val() + "']").remove();
+                });
+            } else {
+                alert("Lütfen aktif listeden kayıt seçiniz");
+            }
+
+            return false;
+        });
+
+        $('#add-account').click(function () {
+            $('#actvMentionList').append("<option value= 0>" + $('#new-account').val() + "(0)" + "</option>");
+            var hiddenValue = $('#hdn-new-accout').val();
+            if (hiddenValue != null && hiddenValue != "") {
+                $('#hdn-new-accout').val(hiddenValue + "-" + $('#new-account').val());
+            } else {
+                $('#hdn-new-accout').val($('#new-account').val());
+            }
+            $('#new-account').val('');
+            return false;
+        });
+
+        $('#save').click(function () {
+          
+            var Ids = "";
+            var index = 0;
+            $("#actvMentionList option").map(function () {
+                if (Ids != null && Ids != "") {
+                    Ids = Ids + "-" + this.value;
+                } else {
+                    Ids = this.value;
+                }
+                index++;
+            });
+
+            if (Ids == null || Ids == "") {
+                $('#content-type-result').text("Kaydet İşlemi İçin Aktif Listede Kayıt Olmalıdır");
+                $('#content-type-result').show();
+                return false;
+            }
+
+            $('body').loadingIndicator();
+            $('.loading-indicator-wrapper').show();
+
+            $.ajax({
+                url: '@Url.Action("UpdateMentionList", "MentionTwitter")',
+                data: { ids: Ids, newAccounts : $('#hdn-new-accout').val() },
+                success: function (data) {
+                    $('#content-type-result').text("İşleminiz Başarılı Tamamlanmıştır");
+                    $('#content-type-result').show();
+                },
+                error: function (data) {
+                    $('#content-type-result').text("İşleminiz Sırasında Bir Hata Meydana Geldi");
+                    $('#content-type-result').show();
+                },
+                complete: function (data) {
+                    $('.loading-indicator-wrapper').hide();
+                }
+            });
+        });
+    });
+
+    function bindMention() {
+
+        $('body').loadingIndicator();
+        $('.loading-indicator-wrapper').show();
+
+        $('#actvMentionList').find('option').remove();
+        $('#passMentionList').find('option').remove();
+
+        $.ajax({
+            url: '@Url.Action("RetrieveMentionTwitter", "MentionTwitter")',
+            success: function (data) {
+                $.each(data, function (i, item) {
+                    if (item.Valid) {
+                        $('#actvMentionList').append("<option value=" + item.Id + ">" + item.Account + "(" + item.UsedCount + ")" + "</option>");
+                    } else {
+                        $('#passMentionList').append("<option value=" + item.Id + ">" + item.Account + "(" + item.UsedCount + ")" + "</option>");
+                    }
+                });
+            },
+            complete: function (data) {
+                $('.loading-indicator-wrapper').hide();
+            }
+        });
+    }
+</script>
+<input id="hdn-new-accout" type="hidden" />
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Mention Listesi</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        Yeni Ekle
+                        <input id="new-account" type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <button id="add-account" type="submit" class="btn btn-primary">Ekle</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        Aktif Liste
+                        <select id="actvMentionList" multiple="multiple" class="form-control"></select>
+                        <a id="addPop" class="btn orange">Ekle</a>
+                        <a id="removePop" class="btn orange">Çıkar</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        Pasif Liste
+                        <select id="passMentionList" multiple="multiple" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <button id="save" type="submit" class="btn btn-primary">Kaydet</button>
+                        <label id="content-type-result" class="control-label" style="display: none"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

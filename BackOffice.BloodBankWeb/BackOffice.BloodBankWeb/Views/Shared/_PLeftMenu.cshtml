@@ -1,0 +1,53 @@
+﻿@{ 
+    var fullName = "";
+    if (Session["UserModel"] != null)
+    {
+        BackOffice.BloodBankWeb.Models.AccountModel accountModel = (BackOffice.BloodBankWeb.Models.AccountModel)HttpContext.Current.Session["UserModel"];
+        if (accountModel != null)
+        {
+            fullName = accountModel.FirstName + " " + accountModel.LastName;
+        }
+    }
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.menu-li').removeClass('selected');
+        var page = window.location.pathname;
+
+        if (page == "/") {
+            $('#content-li').addClass('selected');
+        } else if (page == "/Announcement") {
+            $('#message-li').addClass('selected');
+        } else if (page == "/MentionTwitter") {
+            $('#mention-li').addClass('selected');
+        }
+    });
+</script>
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <div class="user-section">
+                    <div class="user-info">
+                        <div>
+                            <span></span>
+                            <strong><span>@fullName </span></strong>
+                        </div>
+                        <div class="user-text-online">
+                            <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Çevrimiçi
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li id="content-li" class="menu-li">
+                <a href='@Url.Action("Index","Home")'><i class="fa fa-dashboard fa-fw"></i>İçerik</a>
+            </li>
+            <li id="message-li" class="menu-li">
+                <a href='@Url.Action("Index","Announcement")'><i class="fa fa-dashboard fa-fw"></i>Gelen Duyuru</a>
+            </li>
+            <li id="mention-li" class="menu-li">
+                <a href='@Url.Action("Index","MentionTwitter")'><i class="fa fa-dashboard fa-fw"></i>Mention Listesi</a>
+            </li>
+        </ul>
+    </div>
+</nav>

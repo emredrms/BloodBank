@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice.BloodBankWeb", "BackOffice.BloodBankWeb\BackOffice.BloodBankWeb.csproj", "{D9CA76E0-8110-4B38-88B8-7D21DDDFCE0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodBankData", "..\BloodBankService\BloodBankData\BloodBankData.csproj", "{A3B05B03-0938-4052-9A0E-C591DF85CF25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodBankProvider", "..\BloodBankService\BloodBankProvider\BloodBankProvider.csproj", "{C9CF5C63-DADB-4C9B-825A-C591196CEC04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\Common\Common.csproj", "{C2FDB370-1D83-4271-BAF9-3722AAD41495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterApi", "..\TwitterApi\TwitterApi.csproj", "{49E60C59-12BD-4A27-98B2-2E7DF055C3D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSApi", "SMSApi\SMSApi.csproj", "{820581FC-3C66-41E8-B972-549438CA6920}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9CA76E0-8110-4B38-88B8-7D21DDDFCE0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9CA76E0-8110-4B38-88B8-7D21DDDFCE0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9CA76E0-8110-4B38-88B8-7D21DDDFCE0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9CA76E0-8110-4B38-88B8-7D21DDDFCE0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B05B03-0938-4052-9A0E-C591DF85CF25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B05B03-0938-4052-9A0E-C591DF85CF25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B05B03-0938-4052-9A0E-C591DF85CF25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B05B03-0938-4052-9A0E-C591DF85CF25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9CF5C63-DADB-4C9B-825A-C591196CEC04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9CF5C63-DADB-4C9B-825A-C591196CEC04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9CF5C63-DADB-4C9B-825A-C591196CEC04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9CF5C63-DADB-4C9B-825A-C591196CEC04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2FDB370-1D83-4271-BAF9-3722AAD41495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2FDB370-1D83-4271-BAF9-3722AAD41495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2FDB370-1D83-4271-BAF9-3722AAD41495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2FDB370-1D83-4271-BAF9-3722AAD41495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E60C59-12BD-4A27-98B2-2E7DF055C3D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E60C59-12BD-4A27-98B2-2E7DF055C3D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E60C59-12BD-4A27-98B2-2E7DF055C3D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E60C59-12BD-4A27-98B2-2E7DF055C3D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{820581FC-3C66-41E8-B972-549438CA6920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{820581FC-3C66-41E8-B972-549438CA6920}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{820581FC-3C66-41E8-B972-549438CA6920}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{820581FC-3C66-41E8-B972-549438CA6920}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

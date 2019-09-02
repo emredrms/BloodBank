@@ -1,0 +1,69 @@
+﻿@model BloodBankWeb.Models.ContentModel
+@{
+
+}
+<script type="text/javascript" src="@Url.Content("/Scripts/scripts.js")"></script>
+
+@if (Model.ContentId == 3)
+{
+    <section class="slider6 p07">
+        <div>
+            <div>
+                <section class="menu">
+                    <a href="#" class="prev">geri</a>
+                    <div>
+                        <ul>
+                            <li><a href="#"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim1.jpg")" alt=""></span></a></li>
+                            <li><a href="#"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim2.jpg")" alt=""></span></a></li>
+                            <li><a href="#"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim3.png")" alt=""></span></a></li>
+                            <li><a href="#"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim4.png")" alt=""></span></a></li>
+                            <li><a href="#"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim5.png")" alt=""></span></a></li>
+                            <li><a href="#"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim6.png")" alt=""></span></a></li>
+                            <li><a href="#"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim7.jpg")" alt=""></span></a></li>
+                        </ul>
+                    </div>
+                    <a href="#" class="next">ileri</a>
+                </section>
+                <section class="slides">
+                    <article>
+                        <div class="img"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim1.jpg")" alt=""></span></div>
+
+                    </article>
+                    <article>
+                        <div class="img"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim2.jpg")" alt=""></span></div>
+
+                    </article>
+                    <article>
+                        <div class="img"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim3.png")" alt=""></span></div>
+
+                    </article>
+                    <article>
+                        <div class="img"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim4.png")" alt=""></span></div>
+
+                    </article>
+                    <article>
+                        <div class="img"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim5.png")" alt=""></span></div>
+
+                    </article>
+                    <article>
+                        <div class="img"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim6.png")" alt=""></span></div>
+
+                    </article>
+                    <article>
+                        <div class="img"><span class="img-border"><img src="@Url.Content("~/Images/BasinOdasi/Resim7.jpg")" alt=""></span></div>
+
+                    </article>
+                </section>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </section>
+}
+else {
+    <section class="content">
+        <h2>@Model.Title</h2>
+        <section class="columns">
+            <p>@Html.Raw(Model.Content) </p>
+        </section>
+    </section>
+}

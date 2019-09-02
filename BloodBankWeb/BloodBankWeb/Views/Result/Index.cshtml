@@ -1,0 +1,97 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#preview-message').click(function () {
+
+            if (validateAnnouncementInputs("0")) {
+                var text = $('#Hospital').val() + " Hastanesi'ndeki " + $('#PatientName').val() + " için " + $('#BloodGroup').val() + " kana ihtiyaç var. " + $('#Name').val() + " " + $('#Surname').val() + "-" + $('#Phone').val();
+                $('#message-content').html(text);
+                $('#message-text').slideDown("slow");
+            }
+            return false;
+        });
+
+        $('#send-message').click(function () {
+            var text = $('#Hospital').val() + " Hastanesi'ndeki " + $('#PatientName').val() + " için " + $('#BloodGroup').val() + " kana ihtiyaç var. " + $('#Name').val() + " " + $('#Surname').val() + "-" + $('#Phone').val();
+            $('#message-content').html(text);
+            return validateAnnouncementInputs("1");
+        })
+    });
+
+    function validateAnnouncementInputs(showIndicator) {
+        var validForm = true;
+
+        if ($('#Name').val() == null || $('#Name').val() == "") {
+            validForm = false;
+            $("#name-validation").fadeIn("slow");
+        }
+        else {
+            $("#name-validation").fadeOut("slow");
+        }
+        if ($('#Surname').val() == null || $('#Surname').val() == "") {
+            validForm = false;
+            $("#surname-validation").fadeIn("slow");
+        }
+        else {
+            $("#surname-validation").fadeOut("slow");
+        }
+        if ($('#Phone').val() == null || $('#Phone').val() == "") {
+            validForm = false;
+            $("#phone-validation").fadeIn("slow");
+        }
+        else {
+            $("#phone-validation").fadeOut("slow");
+        }
+        if ($('#PatientName').val() == null || $('#PatientName').val() == "") {
+            validForm = false;
+            $("#sick-validation").fadeIn("slow");
+        }
+        else {
+            $("#sick-validation").fadeOut("slow");
+        }
+        if ($('#Hospital').val() == null || $('#Hospital').val() == "") {
+            validForm = false;
+            $("#hospital-validation").fadeIn("slow");
+        }
+        else {
+            $("#hospital-validation").fadeOut("slow");
+        }
+        if (validForm && showIndicator == "1") {
+            $('body').loadingIndicator();
+        }
+        return validForm;
+    }
+
+    function completeAnnouncement() {
+
+        $('.loading-indicator-wrapper').hide();
+        $.dialog.alert('', 'Mesajiniz gonderildi', function () {
+            $.dialog.alert("Sonuc", "");
+        });
+        $('#send-message').hide();
+    }
+</script>
+<section class="content">
+    <h2>Duyuru Bilgilendirme Formu</h2>
+    <!--
+        <section class="columns">
+            <p>Sistemimizde yapmış olduğunuz aramaya karşılık <span id="result-count" class="tooltip dark">TempData["ResulCount"]</span> kayıt bulunmuştur.İlgili duyurunun yapılması için aşağıda bulunam bilgileri doldurarak <span class="tooltip dark">Mesajı Gönder</span> butonuna basınız.</p>
+
+            <div class="col2">
+                <div id="message-text" class="box confirm" style="display: none">
+                    <h4>Mesaj İçeriği</h4>
+                    <p id="message-content"></p>
+                </div>
+            </div>
+        </section>
+        -->
+    <section class="columns">
+        @Html.Partial("_PAnnouncementInfo")
+        <div class="col2">
+            <div id="message-text" class="box confirm" style="display: none">
+                <h4>Mesaj İçeriği</h4>
+                <p id="message-content"></p>
+            </div>
+        </div>
+    </section>
+</section>

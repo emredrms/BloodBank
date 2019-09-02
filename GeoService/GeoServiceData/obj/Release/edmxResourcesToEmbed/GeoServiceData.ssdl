@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GeoDataSourceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CityCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="CountryCode" Type="nchar" MaxLength="10" />
+    <Property Name="StateCode" Type="nchar" MaxLength="10" />
+    <Property Name="Valid" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CountryCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Valid" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="DistrictId" />
+    </Key>
+    <Property Name="DistrictId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DistrictName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DistrictCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="CityCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Valid" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="StateCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="CountryCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Valid" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="GeoDataSourceModelStoreContainer">
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

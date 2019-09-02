@@ -1,0 +1,133 @@
+﻿@model BackOffice.BloodBankWeb.Models.ContentModel
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        setHTMLeditor();
+
+        $('#save').click(function () {
+            updateContent();
+        });
+
+    });
+
+    function setHTMLeditor() {
+
+        $("#editor").kendoEditor();
+        editor = $("#editor").data("kendoEditor");
+
+        $('#ContentId').change(function () {
+            getContent($('option:selected', $('#ContentId')).attr('value'));
+        });
+
+    }
+
+    function getContent(contentTypeCode) {
+        $('body').loadingIndicator();
+        $('.loading-indicator-wrapper').show();
+        if (contentTypeCode != null) {
+            $.ajax({
+                url: '@Url.Action("GetContentById", "Content")',
+                data: { contentId: contentTypeCode },
+                success: function (data) {
+                    $("#editor").data("kendoEditor").value(data);
+                    $(".hidden-content-id").val(contentTypeCode);
+                },
+                complete: function (data) {
+                    $('.loading-indicator-wrapper').hide();
+                }
+            });
+        }
+    }
+
+    function updateContent() {
+        if (OnBeginSubmitForm()) {
+            $.ajax({
+                url: '@Url.Action("UpdateContent","Content")',
+                type: "post",
+                data: { contentId: $('option:selected', $('#ContentId')).attr('value'), content: $("#editor").data("kendoEditor").value() },
+                success: function (data) {
+                    $('#content-type-result').text("İşleminiz Başarılı Tamamlanmıştır");
+                    $('#content-type-result').show();
+                },
+                error: function (data) {
+                    $('#content-type-result').text("İşleminiz Sırasında Bir Hata Meydana Geldi");
+                    $('#content-type-result').show();
+                },
+                complete: function (data) {
+                    $('.loading-indicator-wrapper').hide();
+                }
+            });
+        }
+    }
+
+    function OnBeginSubmitForm() {
+
+        $('body').loadingIndicator();
+        $('.loading-indicator-wrapper').show();
+        var validForm = true;
+
+
+        if ($('#ContentId').val() == null || $('#ContentId').val() == "") {
+            validForm = false;
+            $("#content-type-validation").show();
+        }
+        else {
+            $("#content-type-validation").hide();
+        }
+
+        if ($('#editor').val() == null || $('#editor').val() == "") {
+            validForm = false;
+            $("#content-text-validation").show();
+        }
+        else {
+            $("#content-text-validation").hide();
+        }
+
+        if (!validForm) {
+            $('.loading-indicator-wrapper').hide();
+        }
+
+        return validForm;
+
+    }
+
+</script>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">İçerik Düzenleme</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form role="form">
+                            <div class="form-group">
+                                <label>İçerik tipi</label>
+                                @Html.DropDownListFor(m => m.MainContentTypeId, BackOffice.BloodBankWeb.Models.Helper.GetContentType(), new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label>Başlık</label>
+                                @Html.DropDownListFor(m => m.ContentId, BackOffice.BloodBankWeb.Models.Helper.GetContentByTypeCode("MC"), new { @class = "form-control" })
+                                <label id="content-type-validation" class="control-label" style="display: none">(*) zorunludur</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>İçerik</label>
+                            <textarea id="editor" rows="10" cols="30" style="height:440px"></textarea>
+                            <label id="content-text-validation" class="control-label" style="display: none">(*) zorunludur</label>
+                        </div>
+                        <button id="save" type="submit" class="btn btn-primary">Kaydet</button>
+                        <label id="content-type-result" class="control-label" style="display: none"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

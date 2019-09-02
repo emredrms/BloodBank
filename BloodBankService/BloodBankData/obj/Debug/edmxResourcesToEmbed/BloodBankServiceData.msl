@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BloodBankEntitiesStoreContainer" CdmEntityContainer="Blood_Bank_Entities">
+    <EntitySetMapping Name="Announcement">
+      <EntityTypeMapping TypeName="BloodBankEntities.Announcement">
+        <MappingFragment StoreEntitySet="Announcement">
+          <ScalarProperty Name="AnnouncementId" ColumnName="AnnouncementId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="ContactIds" ColumnName="ContactIds" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="BloodBankEntities.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contact">
+      <EntityTypeMapping TypeName="BloodBankEntities.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="OtherPhone" ColumnName="OtherPhone" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Content">
+      <EntityTypeMapping TypeName="BloodBankEntities.Content">
+        <MappingFragment StoreEntitySet="Content">
+          <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+          <ScalarProperty Name="ContentTypeCode" ColumnName="ContentTypeCode" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content1" ColumnName="Content" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentType">
+      <EntityTypeMapping TypeName="BloodBankEntities.ContentType">
+        <MappingFragment StoreEntitySet="ContentType">
+          <ScalarProperty Name="ContentTypeId" ColumnName="ContentTypeId" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="BloodBankEntities.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="District">
+      <EntityTypeMapping TypeName="BloodBankEntities.District">
+        <MappingFragment StoreEntitySet="District">
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Message">
+      <EntityTypeMapping TypeName="BloodBankEntities.Message">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="AnnouncementId" ColumnName="AnnouncementId" />
+          <ScalarProperty Name="ContactIds" ColumnName="ContactIds" />
+          <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+          <ScalarProperty Name="AuthUser" ColumnName="AuthUser" />
+          <ScalarProperty Name="Channel" ColumnName="Channel" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Approve" ColumnName="Approve" />
+          <ScalarProperty Name="Send" ColumnName="Send" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State">
+      <EntityTypeMapping TypeName="BloodBankEntities.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemUser">
+      <EntityTypeMapping TypeName="BloodBankEntities.SystemUser">
+        <MappingFragment StoreEntitySet="SystemUser">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MentionTwitter">
+      <EntityTypeMapping TypeName="BloodBankEntities.MentionTwitter">
+        <MappingFragment StoreEntitySet="MentionTwitter">
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+          <ScalarProperty Name="UsedCount" ColumnName="UsedCount" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageLog">
+      <EntityTypeMapping TypeName="BloodBankEntities.MessageLog">
+        <MappingFragment StoreEntitySet="MessageLog">
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Credits" ColumnName="Credits" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="UsedAmount" ColumnName="UsedAmount" />
+          <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+          <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

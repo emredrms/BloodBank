@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Türkiye Kan Bankası</title>
+        <link href="http://fonts.googleapis.com/css?family=Signika:600,400,300" rel="stylesheet" type="text/css">
+        <link href="Style/style.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="Style/style-headers.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="Style/jquery.loading-indicator.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="Style/jquery.dialog.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="Style/home_common_all.css" rel="stylesheet" type="text/css" media="screen" />
+    </head>
+    <body class="home boxed shadow p10">
+        <div class="root">
+            <header class="h12 sticky-enabled no-topbar">
+                <section class="main-header">
+                    <p class="title"><a href="./"><img src="Images/kan_bankasi.jpg" alt="Türkiye Kan Bankası" width="125" height="35"></a><span>Türkiye Kan Bankası</span></p>
+                    <nav class="social">
+                        <ul>
+                            <li><a href="#" class="facebook">Facebook</a></li>
+                            <li><a href="#" class="twitter">Twitter</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="mainmenu">
+                        <ul>
+                            <li class="current-menu-item"><a href="./">Anasayfa</a>
+                            <li><a href="Content.html?contentId=1">Hakkımızda</a>
+                            <li><a href="Content.html?contentId=2">Faaliyetler</a>
+                            <li><a href="Content.html?contentId=3">Basın Odası</a>
+                            <li><a href="Content.html?contentId=4">Gizlilik &amp; Şartlar</a>
+                            <li><a href="Content.html?contentId=5">Bize Ulaşın</a>
+                        </ul>
+                    </nav>
+                    <div class="clear"></div>
+                </section>
+            </header>
+            <section id="mainPage" class="slider7">
+                <div class="p05">
+                    <div>
+                        <div class="slider">
+                            <article class="slider-content" style="display: block;opacity: 1;">
+                                <section class="content">
+                                    <section class="columns">
+                                        <div class="col2">
+                                            <form action="#" method="post" class="form2">
+                                                <p id="city-column">
+                                                    <label for="select2">İl</label>
+                                                    <span class="select">
+                                                        <span id="city-span" class="value"><span>Seçiniz</span>
+                                                        </span>
+                                                        <select id="city" name="select" style="opacity: 0;">
+                                                        </select>
+                                                    </span>
+                                                    <span id="city-column-validation" class="validation-error">(*) zorunludur</span>
+                                                </p>
+                                                <p id="district-column">
+                                                    <label for="select">İlçe</label>
+                                                    <span class="select">
+                                                        <span id="district-span" class="value"><span>İl Seçiniz</span>
+                                                        </span>
+                                                        <select id="district" name="select" style="opacity: 0;">
+                                                            <option>        </option>
+                                                        </select>
+                                                    </span>
+                                                    <span id="district-column-validation" class="validation-error">(*) zorunludur</span>
+                                                </p>
+                                                <p id="blood-column">
+                                                    <label for="select">Kan Grubu</label>
+                                                    <span class="select">
+                                                        <span id="blood-span" class="value"><span>Seçiniz</span>
+                                                        </span>
+                                                        <select id="blood" name="select" style="opacity: 0;">
+                                                            <option>          </option>
+                                                            <option value="Aplus">A RH+       </option>
+                                                            <option value="Aminus">A RH-       </option>
+                                                            <option value="Bplus">B RH+       </option>
+                                                            <option value="Bminus">B RH-       </option>
+                                                            <option value="ABplus">AB RH+       </option>
+                                                            <option value="ABminus">AB RH-       </option>
+                                                            <option value="0plus">0 RH+       </option>
+                                                            <option value="0minus">0 RH-       </option>
+                                                        </select>
+                                                    </span>
+                                                    <span id="blood-column-validation" class="validation-error">(*) zorunludur</span>
+                                                </p>
+                                                <p>
+                                                    <label for="select">Cinsiyet</label>
+                                                    <span class="select">
+                                                        <span id="gender-span" class="value"><span>Erkek &amp; Kadın</span>
+                                                        </span>
+                                                        <select id="gender" name="select" style="opacity: 0;">
+                                                            <option value="null">Erkek &amp; Kadın   </option>
+                                                            <option value="K">Kadın              </option>
+                                                            <option value="E">Erkek              </option>
+                                                        </select>
+                                                    </span>
+                                                </p>
+                                                <p class="submit">
+                                                    <button id="enquiry-button" type="submit" name="submit" value="2">Sorgula</button>
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </section>
+                                </section>
+                            </article>
+                            <article class="slider-content">
+                                <div class="video"><iframe src="//www.youtube.com/embed/1hcZt5Nzl8k" width="650" height="360"></iframe></div>
+                                <div>
+                                    <h3>Some other title</h3>
+                                    <p>Content must be different for anybody to see the slides are changing</p>
+                                </div>
+                            </article>
+                            <article class="slider-content">
+                                <section class="content">
+                                    <section class="columns" style="margin: 0px !important">
+                                        <div class="col2">
+                                            <form action="#" method="post" class="form2">
+                                                <p id="mail-column">
+                                                    <label for="text">E Posta</label><input name="text" id="mail">
+                                                    <span id="mail-column-validation" class="validation-error">(*) zorunludur</span>
+                                                </p>
+                                                <p id="register-blood-column">
+                                                    <label for="select2">Kan Grubu</label>
+                                                    <span class="select">
+                                                        <span id="register-blood-span" class="value"><span>Seçiniz</span>
+                                                        </span>
+                                                        <select id="register-blood" name="select" style="opacity: 0;">
+                                                            <option>          </option>
+                                                            <option value="Aplus">A RH+       </option>
+                                                            <option value="Aminus">A RH-       </option>
+                                                            <option value="Bplus">B RH+       </option>
+                                                            <option value="Bminus">B RH-       </option>
+                                                            <option value="ABplus">AB RH+       </option>
+                                                            <option value="ABminus">AB RH-       </option>
+                                                            <option value="0plus">0 RH+       </option>
+                                                            <option value="0minus">0 RH-       </option>
+                                                        </select>
+                                                    </span>
+                                                    <span id="register-blood-column-validation" class="validation-error">(*) zorunludur</span>
+                                                </p>
+                                                <p id="register-gender-column">
+                                                    <label for="select2">Cinsiyet</label>
+                                                    <span class="select">
+                                                        <span id="register-gender-span" class="value"><span>Seçiniz</span>
+                                                        </span>
+                                                        <select id="register-gender" name="select" style="opacity: 0;">
+                                                            <option>          </option>
+                                                            <option value="K">Kadın</option>
+                                                            <option value="E">Erkek</option>
+                                                        </select>
+                                                    </span>
+                                                    <span id="register-gender-column-validation" class="validation-error">(*) zorunludur</span>
+                                                </p>
+                                                <p id="name-column">
+                                                    <label for="text">Ad</label><input name="text" id="name">
+                                                    <span id="name-column-validation" class="validation-error">(*) zorunludur</span>
+                                                </p>
+                                                <p id="surname-column">
+                                                    <label for="text">Soyad</label><input name="text" id="surname">
+                                                    <span id="surname-column-validation" class="validation-error">(*) zorunludur</span>
+                                                </p>
+                                                <p id="register-city-column">
+                                                    <label for="select2">İl</label>
+                                                    <span class="select">
+                                                        <span id="register-city-span" class="value"><span>Seçiniz</span>
+                                                        </span>
+                                                        <select id="register-city" name="select" style="opacity: 0;">
+                                                        </select>
+                                                    </span>
+                                                    <span id="register-city-column-validation" class="validation-error">(*) zorunludur</span>
+                                                </p>
+                                                <p id="register-district-column">
+                                                    <label for="select">İlçe</label>
+                                                    <span class="select">
+                                                        <span id="register-district-span" class="value"><span>İl Seçiniz</span>
+                                                        </span>
+                                                        <select id="register-district" name="select" style="opacity: 0;">
+                                                            <option>        </option>
+                                                        </select>
+                                                    </span>
+                                                    <span id="register-district-column-validation" class="validation-error">(*) zorunludur</span>
+                                                </p>
+                                                <p id="phone-column">
+                                                    <label for="text">Cep Telefonu</label><input name="text" id="phone">
+                                                    <span id="phone-column-validation" class="validation-error">(*) zorunludur</span>
+                                                </p>
+                                                <p class="submit">
+                                                    <button id="register-button" type="submit" name="submit" value="2">Kaydet</button>
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </section>
+                                </section>
+                            </article>
+                            <article class="slider-content">
+                                <section class="content">
+                                    <section class="columns" style="margin: 0px !important">
+                                        <div class="col2">
+                                            <p style="color:#000 !important">
+                                                <a class="twitter-timeline" href="https://twitter.com/drmsemre" data-widget-id="606522810807091200">Tweets by @drmsemre</a>
+                                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </section>
+                                </section>
+                            </article>
+                            <article class="slider-content">
+                                <section class="content">
+                                    <section class="columns" style="margin: 0px !important">
+                                        <div class="col2">
+                                            <div id="fb-root"></div>
+                                            <script>
+                                                (function(d, s, id) {
+                                                  var js, fjs = d.getElementsByTagName(s)[0];
+                                                  if (d.getElementById(id)) return;
+                                                  js = d.createElement(s); js.id = id;
+                                                  js.src = "//connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v2.3&appId=160921600658491";
+                                                  fjs.parentNode.insertBefore(js, fjs);
+                                                }(document, 'script', 'facebook-jssdk'));
+                                            </script>
+                                            <div class="fb-page" data-href="https://www.facebook.com/TrkyKanBankasi?fref=ts" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/TrkyKanBankasi?fref=ts"><a href="https://www.facebook.com/TrkyKanBankasi?fref=ts">Facebook</a></blockquote></div></div>
+                                        </div>
+                                    </section>
+                                </section>
+                            </article>
+                        </div>
+                        <div class="controls">
+                            <ul class="slider-titles">
+                                <li class="slider-control active"><a href="#" class="camera">Arama Yap</a></li>
+                                <li class="slider-control"><a href="#" class="info">Tanıtım Videosu</a></li>
+                                <li class="slider-control"><a href="#" class="cart">Kayıt Ol</a></li>
+                                <li class="slider-control"><a href="#" class="people">Twitter</a></li>
+                                <li class="slider-control"><a href="#" class="mail">Facebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="Js/jquery-1.10.2.js"></script>
+        <script src="Js/Controller/Index.js"></script>
+        <script src="Js/jquery.loading-indicator.min.js"></script>
+        <script src="Js/jquery.maskedinput.min.js"></script>
+        <script src="Js/jquery.dialog.js"></script>
+    </body>
+</html>

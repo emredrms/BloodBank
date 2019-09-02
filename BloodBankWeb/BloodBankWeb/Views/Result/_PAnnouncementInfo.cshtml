@@ -1,0 +1,39 @@
+﻿@model BloodBankWeb.Models.AnnouncementModel
+<div class="col2" style="float: left !important">
+    @using (Ajax.BeginForm("UpdateAnnouncement", "Result", new AjaxOptions { OnComplete = "completeAnnouncement" }, new { @class = "form2" }))
+    {
+        @Html.HiddenFor(m => m.AnnouncementId)
+        @Html.HiddenFor(m => m.BloodGroup)
+        <input id="announcementId" type="hidden" />
+        <input id="blooad-group" type="hidden" />
+        <p>
+            <label for="text2">Hasta Yakını İsmi</label>
+            @Html.TextBoxFor(m => m.Name)
+            <span id="name-validation" class="validation-error">(*) zorunludur</span>
+        </p>
+        <p>
+            <label for="text2">Hasta Yakını Soyismi</label>
+            @Html.TextBoxFor(m => m.Surname)
+            <span id="surname-validation" class="validation-error">(*) zorunludur</span>
+        </p>
+        <p>
+            <label for="text2">Telefon</label>
+            @Html.TextBoxFor(m => m.Phone, new { @class = "phone" })
+            <span id="phone-validation" class="validation-error">(*) zorunludur</span>
+        </p>
+        <p>
+            <label for="text2">Hasta İsmi Soyismi</label>
+            @Html.TextBoxFor(m => m.PatientName)
+            <span id="sick-validation" class="validation-error">(*) zorunludur</span>
+        </p>
+        <p>
+            <label for="text2">Hastane İsmi</label>
+            @Html.TextBoxFor(m => m.Hospital)
+            <span id="hospital-validation" class="validation-error">(*) zorunludur</span>
+        </p>
+        <p class="submit">
+            <button id="preview-message" type="reset" value="2">Gönderilecek Mesajı Göster</button>
+            <button id="send-message" type="submit" name="submit" value="2">Mesajı Gönder</button>
+        </p>
+    }
+</div>

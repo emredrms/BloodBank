@@ -1,0 +1,161 @@
+﻿@{
+
+    ViewBag.Title = "Duyuru";
+    var authUser = "";
+    if (Session["UserModel"] != null)
+    {
+        BackOffice.BloodBankWeb.Models.AccountModel accountModel = (BackOffice.BloodBankWeb.Models.AccountModel)HttpContext.Current.Session["UserModel"];
+        if(accountModel != null)
+        {
+            authUser = accountModel.FirstName + " " + accountModel.LastName;
+        }
+    }
+}
+<script type="text/javascript">
+
+    var amp = '&';
+    var equal = '=';
+    
+
+
+    $(document).ready(function () {
+        getWrapperMessage();
+    });
+
+    function getWrapperMessage() {
+        $("#message-grid").kendoGrid({
+            dataSource: {
+                type: "json",
+                transport: {
+                    read: {
+                        url: '@Url.Action("RetrievePendingApprovalAnnouncement", "Announcement")',
+                        dataType: "json"
+                    },
+                    update: {
+                        url: "/Announcement/AddMessageByChannel?req",
+                        dataType: "json"
+                    },
+                    parameterMap: function (options, operation) {
+                        if (operation == "update" && options.models) {
+                            var reqURL = kendo.stringify('announcementId' + equal + options.models[0].AnnouncementId + amp + 'contactIds' + equal + options.models[0].ContactIds + amp + 'messageText' + equal + options.models[0].Text + amp + 'authUser' + equal + '@authUser' + amp + 'facebook' + equal + options.models[0].Facebook + amp + 'twitter' + equal + options.models[0].Twitter + amp + 'phone' + equal + options.models[0].Phone + amp + 'lead' + equal + options.models[0].Lead);
+                            return reqURL.replace('"', '').replace('"', '')
+                        }
+                    }
+                },
+                schema: {
+                    data: "Announcements",
+                    total: "TotalCount",
+                    model: {
+                        id: "AnnouncementId",
+                        fields: {
+                            AnnouncementId: { editable: false, nullable: true },
+                            Text: { validation: { required: true }, width: "250px" },
+                            StrCreateDate: { editable: false, nullable: true },
+                            Facebook: { type: "boolean" },
+                            Twitter: { type: "boolean" },
+                            Phone: { type: "boolean" },
+                            Lead: { type: "boolean" }
+                        }
+                    }
+                },
+                batch: true,
+                pageSize: 5
+            },
+            sortable: true,
+            pageable: true,
+            detailInit: detailInit,
+            columns: [
+            {
+                field: "AnnouncementId",
+                title: "No",
+                width:"60px"
+            },
+            {
+                field: "Text",
+                title: "Duyuru Icerigi",
+                editor: zipCodesEditor
+            },
+            {
+                field: "StrCreateDate",
+                title: "Duyuru Zamanı",
+                width: "1px"
+            },
+            {
+                field: "Facebook",
+                title: "Facebook",
+                width: "1px"
+            },
+            {
+                field: "Twitter",
+                title: "Twitter",
+                width: "1px"
+            },
+            {
+                field: "Phone",
+                title: "Telefon",
+                width: "1px"
+            },
+            {
+                field: "Lead",
+                title: "Kilavuz",
+                width: "1px"
+            },
+            {
+                command: ["edit"],
+                title: "&nbsp;",
+                width: "80px"
+            }
+            ],
+            editable: "popup"
+        });
+    }
+
+    function detailInit(e) {
+        $("<div/>").appendTo(e.detailCell).kendoGrid({
+            dataSource: {
+                type: "json",
+                transport: {
+                    read: '/Announcement/RetrieveMessageByAnnouncementId?announcementId=' + e.data.AnnouncementId,
+                    dataType: "json"
+                },
+                schema: {
+                    data: "messages",
+                    total: "TotalCount"
+                },
+                pageSize: 4
+            },
+            scrollable: false,
+            sortable: true,
+            pageable: true,
+            columns: [
+                                { field: "MessageId", title: "No" },
+                                { field: "MessageText", title: "Icerik" },
+                                { field: "Channel", title: "Kanal" },
+                                {
+                                    field: "Send",
+                                    title: "Durum",
+                                    template: "<img src=" + "# if (Send){# " + "../Images/ok.jpg" + "# } else {#" + "../Images/no.jpg" + "#}# title=\"image\" height=\"24\" alt=\"image\"/>"
+                                }
+            ]
+        });
+    }
+
+    var zipCodesEditor = function (container, options) {
+        $('<textarea id="message-area" data-bind="value: ' + options.field + '"></textarea>').appendTo(container);
+        $('<div id="message-count" class="k-edit-field">0</div>').appendTo(container);
+    };
+
+</script>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Duyuru</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        @Html.ActionLink("Facebook Mesajlarını Tetikle", "Index", "Facebook", null, new { target = "_blank" })
+    </div>
+</div>
+<div class="row">
+    <div id="message-grid"></div>
+</div>

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BloodBankEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Announcement">
+    <Key>
+      <PropertyRef Name="AnnouncementId" />
+    </Key>
+    <Property Name="AnnouncementId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Message" Relationship="Self.FK_Message_Announcement" FromRole="Announcement" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CityCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CountryCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="StateCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Valid" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="OtherPhone" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="BloodGroup" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="CityCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CityName" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="DistrictCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DistrictName" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="UniqueId" Type="Guid" Nullable="false" />
+    <Property Name="Valid" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Content">
+    <Key>
+      <PropertyRef Name="ContentId" />
+    </Key>
+    <Property Name="ContentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContentTypeCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Valid" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContentType">
+    <Key>
+      <PropertyRef Name="ContentTypeId" />
+    </Key>
+    <Property Name="ContentTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TypeCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Valid" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Valid" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="DistrictId" />
+    </Key>
+    <Property Name="DistrictId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DistrictCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CityCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Valid" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AnnouncementId" Type="Int32" Nullable="false" />
+    <Property Name="ContactIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MessageText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AuthUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Channel" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Approve" Type="Boolean" Nullable="false" />
+    <Property Name="Send" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Announcement" Relationship="Self.FK_Message_Announcement" FromRole="Message" ToRole="Announcement" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StateCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CountryCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Valid" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SystemUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="Valid" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Message_Announcement">
+    <End Role="Announcement" Type="Self.Announcement" Multiplicity="1" />
+    <End Role="Message" Type="Self.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Announcement">
+        <PropertyRef Name="AnnouncementId" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="AnnouncementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Blood_Bank_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Announcement" EntityType="Self.Announcement" />
+    <EntitySet Name="City" EntityType="Self.City" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" />
+    <EntitySet Name="Content" EntityType="Self.Content" />
+    <EntitySet Name="ContentType" EntityType="Self.ContentType" />
+    <EntitySet Name="Country" EntityType="Self.Country" />
+    <EntitySet Name="District" EntityType="Self.District" />
+    <EntitySet Name="Message" EntityType="Self.Message" />
+    <EntitySet Name="State" EntityType="Self.State" />
+    <EntitySet Name="SystemUser" EntityType="Self.SystemUser" />
+    <AssociationSet Name="FK_Message_Announcement" Association="Self.FK_Message_Announcement">
+      <End Role="Announcement" EntitySet="Announcement" />
+      <End Role="Message" EntitySet="Message" />
+    </AssociationSet>
+    <EntitySet Name="MentionTwitter" EntityType="BloodBankEntities.MentionTwitter" />
+    <EntitySet Name="MessageLog" EntityType="BloodBankEntities.MessageLog" />
+  </EntityContainer>
+  <EntityType Name="MentionTwitter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsedCount" Type="Int32" Nullable="false" />
+    <Property Name="Valid" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MessageLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReferenceNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MessageText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UsedAmount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Credits" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

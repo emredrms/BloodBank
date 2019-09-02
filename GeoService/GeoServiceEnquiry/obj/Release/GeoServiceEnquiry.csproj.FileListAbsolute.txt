@@ -1,0 +1,14 @@
+C:\Project\GeoService\GeoServiceEnquiry\bin\GeoServiceEnquiry.dll.config
+C:\Project\GeoService\GeoServiceEnquiry\bin\GeoServiceEnquiry.dll
+C:\Project\GeoService\GeoServiceEnquiry\bin\GeoServiceEnquiry.pdb
+C:\Project\GeoService\GeoServiceEnquiry\bin\Common.dll
+C:\Project\GeoService\GeoServiceEnquiry\bin\GeoServiceProvider.dll
+C:\Project\GeoService\GeoServiceEnquiry\bin\GeoServiceData.dll
+C:\Project\GeoService\GeoServiceEnquiry\bin\EntityFramework.dll
+C:\Project\GeoService\GeoServiceEnquiry\bin\Common.pdb
+C:\Project\GeoService\GeoServiceEnquiry\bin\GeoServiceProvider.pdb
+C:\Project\GeoService\GeoServiceEnquiry\bin\GeoServiceData.pdb
+C:\Project\GeoService\GeoServiceEnquiry\bin\EntityFramework.xml
+C:\Project\GeoService\GeoServiceEnquiry\obj\Release\GeoServiceEnquiry.csprojResolveAssemblyReference.cache
+C:\Project\GeoService\GeoServiceEnquiry\obj\Release\GeoServiceEnquiry.dll
+C:\Project\GeoService\GeoServiceEnquiry\obj\Release\GeoServiceEnquiry.pdb

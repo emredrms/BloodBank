@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbD6F0F326BCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="CityCode" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="CountryCode" Type="nchar" MaxLength="10" />
+          <Property Name="StateCode" Type="nchar" MaxLength="10" />
+          <Property Name="Valid" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="CountryCode" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Valid" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="District">
+          <Key>
+            <PropertyRef Name="DistrictId" />
+          </Key>
+          <Property Name="DistrictId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DistrictName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DistrictCode" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="CityCode" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Valid" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateName" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="StateCode" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="CountryCode" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Valid" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dbD6F0F326BCModelStoreContainer">
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbD6F0F326BCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CityCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CountryCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="StateCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Valid" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CountryCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Valid" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="District">
+          <Key>
+            <PropertyRef Name="DistrictId" />
+          </Key>
+          <Property Name="DistrictId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DistrictCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CityCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Valid" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StateCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CountryCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Valid" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Geo_DataSource_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="City" EntityType="Self.City" />
+          <EntitySet Name="Country" EntityType="Self.Country" />
+          <EntitySet Name="District" EntityType="Self.District" />
+          <EntitySet Name="State" EntityType="Self.State" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbD6F0F326BCModelStoreContainer" CdmEntityContainer="Geo_DataSource_Entities">
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="dbD6F0F326BCModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="Valid" ColumnName="Valid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Country">
+            <EntityTypeMapping TypeName="dbD6F0F326BCModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="Valid" ColumnName="Valid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="District">
+            <EntityTypeMapping TypeName="dbD6F0F326BCModel.District">
+              <MappingFragment StoreEntitySet="District">
+                <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+                <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+                <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="Valid" ColumnName="Valid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="State">
+            <EntityTypeMapping TypeName="dbD6F0F326BCModel.State">
+              <MappingFragment StoreEntitySet="State">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="Valid" ColumnName="Valid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

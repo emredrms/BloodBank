@@ -1,0 +1,11 @@
+C:\Project\BloodBankService\BloodBankProvider\bin\Release\BloodBankProvider.dll
+C:\Project\BloodBankService\BloodBankProvider\bin\Release\BloodBankProvider.pdb
+C:\Project\BloodBankService\BloodBankProvider\bin\Release\BloodBankData.dll
+C:\Project\BloodBankService\BloodBankProvider\bin\Release\Common.dll
+C:\Project\BloodBankService\BloodBankProvider\bin\Release\EntityFramework.dll
+C:\Project\BloodBankService\BloodBankProvider\bin\Release\Common.pdb
+C:\Project\BloodBankService\BloodBankProvider\bin\Release\BloodBankData.pdb
+C:\Project\BloodBankService\BloodBankProvider\bin\Release\EntityFramework.xml
+C:\Project\BloodBankService\BloodBankProvider\obj\Release\BloodBankProvider.csprojResolveAssemblyReference.cache
+C:\Project\BloodBankService\BloodBankProvider\obj\Release\BloodBankProvider.dll
+C:\Project\BloodBankService\BloodBankProvider\obj\Release\BloodBankProvider.pdb

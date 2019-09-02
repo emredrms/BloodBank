@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Türkiye Kan Bankası | Ücretsiz ve SMS Destekli</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Html.Partial("_PReferenceCSS")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Html.Partial("_PReferenceJS")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.phone').mask('0-(999)-999-99-99');
+            var alertX = $.dialog.alert;
+        });
+    </script>
+</head>
+<body class="home boxed shadow p10">
+    <div class="root">
+        @RenderSection("featured", required: false)
+        @Html.Partial("_PHeader")
+        @RenderBody()
+    </div>
+</body>
+</html>

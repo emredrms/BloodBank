@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Türkiye Kan Bankası</title>
+        <link href="http://fonts.googleapis.com/css?family=Signika:600,400,300" rel="stylesheet" type="text/css">
+        <link href="Style/style.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="Style/style-headers.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="Style/jquery.loading-indicator.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="Style/jquery.dialog.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="Style/home_common_all.css" rel="stylesheet" type="text/css" media="screen" />
+    </head>
+    <body class="home boxed shadow p10">
+        <div class="root">
+            <header class="h12 sticky-enabled no-topbar">
+                <section class="main-header">
+                    <p class="title"><a href="./"><img src="Images/kan_bankasi.jpg" alt="Türkiye Kan Bankası" width="125" height="35"></a><span>Türkiye Kan Bankası</span></p>
+                    <nav class="social">
+                        <ul>
+                            <li><a href="#" class="facebook">Facebook</a></li>
+                            <li><a href="#" class="twitter">Twitter</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="mainmenu">
+                        <ul>
+                            <li class="current-menu-item"><a href="./">Anasayfa</a>
+                            <li><a href="Content.html?contentId=1">Hakkımızda</a>
+                            <li><a href="Content.html?contentId=2">Faaliyetler</a>
+                            <li><a href="Content.html?contentId=3">Basın Odası</a>
+                            <li><a href="Content.html?contentId=4">Gizlilik &amp; Şartlar</a>
+                            <li><a href="Content.html?contentId=5">Bize Ulaşın</a>
+                        </ul>
+                    </nav>
+                    <div class="clear"></div>
+                </section>
+            </header>
+            <section class="content">
+                <h2>Arama Sonucu</h2>
+                <section class="columns">
+                    <p>Sistemimizde yapmış olduğunuz aramaya karşılık <span id="result-count" class="tooltip dark">0</span> kayıt bulunmuştur.İlgili duyurunun yapılması için aşağıda bulunam bilgileri doldurarak <span class="tooltip dark">Mesajı Gönder</span> butonuna basınız.</p>
+                    <div class="col2" style="float: left !important">
+                        <form action="#" method="post" class="form2">
+                            <input id="announcementId" type="hidden" />
+                            <input id="blooad-group" type="hidden" />
+                            <p>
+                                <label for="text2">Ad</label><input id="name">
+                                <span id="name-validation" class="validation-error">(*) zorunludur</span>
+                            </p>
+                            <p>
+                                <label for="text2">Soyad</label><input id="surname">
+                                <span id="surname-validation" class="validation-error">(*) zorunludur</span>
+                            </p>
+                            <p>
+                                <label for="text2">Telefon</label><input id="phone">
+                                <span id="phone-validation" class="validation-error">(*) zorunludur</span>
+                            </p>
+                            <p>
+                                <label for="text2">Hasta Adı</label><input id="sick-name">
+                                <span id="sick-validation" class="validation-error">(*) zorunludur</span>
+                            </p>
+                            <p>
+                                <label for="text2">Hastane Adı</label><input id="hospital-name">
+                                <span id="hospital-validation" class="validation-error">(*) zorunludur</span>
+                            </p>
+                            <p class="submit">
+                                <button id="preview-message" type="reset" name="reset" value="2">Gönderilecek Mesajı Göster</button>
+                                <button id="send-message" type="submit" name="submit" value="2">Mesajı Gönder</button>
+                            </p>
+                        </form>
+                    </div>
+                    <div class="col2">
+                        <div class="box confirm" style="display: none">
+                            <h4>Mesaj İçeriği</h4>
+                            <p id="message-content">Buraya mesaj formatı gelecek</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <script src="Js/jquery-1.10.2.js"></script>
+        <script src="Js/Controller/Result.js"></script>
+        <script src="Js/jquery.loading-indicator.min.js"></script>
+        <script src="Js/jquery.maskedinput.min.js"></script>
+        <script src="Js/jquery.dialog.js"></script>
+    </body>
+</html>

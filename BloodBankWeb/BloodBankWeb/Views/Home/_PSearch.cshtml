@@ -1,0 +1,49 @@
+﻿@model BloodBankWeb.Models.SearchModel
+<article class="slider-content" style="display: block;opacity: 1;">
+    <section class="content">
+        <section class="columns">
+            <div class="col2">
+                @using (Html.BeginForm("RetrieveContactBySearchCriteria", "Home", FormMethod.Post, new { @class = "form1", @id="searchForm" }))
+                {
+                    <p id="city-column">
+                        <label for="select2">İl</label>
+                        <span class="select">
+                            @Html.DropDownListFor(m => m.CityId, BloodBankWeb.Models.Helper.GetCities("90"), new { @class = "select" })
+                        </span>
+                        <span id="city-column-validation" class="validation-error">(*) zorunludur</span>
+                    </p>
+                    <p id="district-column">
+                        <label for="select">İlçe</label>
+                        <span class="select">
+                            <span id="district-span" class="value">
+                                <span>İl Seçiniz</span>
+                            </span>
+                            @Html.DropDownListFor(m => m.DistrictId, BloodBankWeb.Models.Helper.GetDistrictByCity("0"), new { @class = "select" })
+                        </span>
+                        <span id="district-column-validation" class="validation-error">(*) zorunludur</span>
+                    </p>
+                    <p id="blood-column">
+                        <label for="select">Kan Grubu</label>
+                        <span class="select">
+                            @Html.DropDownListFor(m => m.BloodGroup, BloodBankWeb.Models.Helper.GetBloodBankGroup(), new { @class = "select" })
+                        </span>
+                        <span id="blood-column-validation" class="validation-error">(*) zorunludur</span>
+                    </p>
+                    <p>
+                        <label for="select">Cinsiyet</label>
+                        <span class="select">
+                            @Html.DropDownListFor(m => m.Gender, BloodBankWeb.Models.Helper.GetGender(true), new { @class = "select" })
+                        </span>
+                    </p>
+                    <p class="submit">
+                        <button id="enquiry-button" type="submit" name="submit" value="2">Sorgula</button>
+                    </p>
+                    if (TempData["NoResult"] != null)
+                    {
+                        <span class="validation-error" style="display: block !important">@TempData["NoResult"].ToString()</span>
+                    }
+                }
+            </div>
+        </section>
+    </section>
+</article>
