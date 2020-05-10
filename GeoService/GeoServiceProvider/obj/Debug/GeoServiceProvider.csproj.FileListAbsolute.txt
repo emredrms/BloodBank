@@ -29,6 +29,6 @@ D:\Project\Live\BloodBank\GeoService\GeoServiceProvider\bin\Debug\GeoServiceData
 D:\Project\Live\BloodBank\GeoService\GeoServiceProvider\bin\Debug\GeoServiceData.pdb
 D:\Project\Live\BloodBank\GeoService\GeoServiceProvider\bin\Debug\Common.pdb
 D:\Project\Live\BloodBank\GeoService\GeoServiceProvider\bin\Debug\EntityFramework.xml
-D:\Project\Live\BloodBank\GeoService\GeoServiceProvider\obj\Debug\GeoServiceProvider.csprojResolveAssemblyReference.cache
 D:\Project\Live\BloodBank\GeoService\GeoServiceProvider\obj\Debug\GeoServiceProvider.dll
 D:\Project\Live\BloodBank\GeoService\GeoServiceProvider\obj\Debug\GeoServiceProvider.pdb
+D:\Project\Live\BloodBank\GeoService\GeoServiceProvider\obj\Debug\GeoServiceProvider.csprojResolveAssemblyReference.cache

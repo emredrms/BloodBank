@@ -4,7 +4,7 @@
         $('#preview-message').click(function () {
 
             if (validateAnnouncementInputs("0")) {
-                var text = $('#Hospital').val() + " Hastanesi'ndeki " + $('#PatientName').val() + " için " + $('#BloodGroup').val() + " kana ihtiyaç var. " + $('#Name').val() + " " + $('#Surname').val() + "-" + $('#Phone').val();
+                var text = $('#Hospital').val() + " Hastanesi'ndeki " + $('#PatientName').val() + " için " + $('#BloodGroup').val() + " kana ihtiyaç var. " + $('#Name').val()  + "-" + $('#Phone').val();
                 $('#message-content').html(text);
                 $('#message-text').slideDown("slow");
             }
@@ -12,7 +12,7 @@
         });
 
         $('#send-message').click(function () {
-            var text = $('#Hospital').val() + " Hastanesi'ndeki " + $('#PatientName').val() + " için " + $('#BloodGroup').val() + " kana ihtiyaç var. " + $('#Name').val() + " " + $('#Surname').val() + "-" + $('#Phone').val();
+            var text = $('#Hospital').val() + " Hastanesi'ndeki " + $('#PatientName').val() + " için " + $('#BloodGroup').val() + " kana ihtiyaç var. " + $('#Name').val()  + "-" + $('#Phone').val();
             $('#message-content').html(text);
             return validateAnnouncementInputs("1");
         })
@@ -27,13 +27,6 @@
         }
         else {
             $("#name-validation").fadeOut("slow");
-        }
-        if ($('#Surname').val() == null || $('#Surname').val() == "") {
-            validForm = false;
-            $("#surname-validation").fadeIn("slow");
-        }
-        else {
-            $("#surname-validation").fadeOut("slow");
         }
         if ($('#Phone').val() == null || $('#Phone').val() == "") {
             validForm = false;
@@ -73,18 +66,6 @@
 </script>
 <section class="content">
     <h2>Duyuru Bilgilendirme Formu</h2>
-    <!--
-        <section class="columns">
-            <p>Sistemimizde yapmış olduğunuz aramaya karşılık <span id="result-count" class="tooltip dark">TempData["ResulCount"]</span> kayıt bulunmuştur.İlgili duyurunun yapılması için aşağıda bulunam bilgileri doldurarak <span class="tooltip dark">Mesajı Gönder</span> butonuna basınız.</p>
-
-            <div class="col2">
-                <div id="message-text" class="box confirm" style="display: none">
-                    <h4>Mesaj İçeriği</h4>
-                    <p id="message-content"></p>
-                </div>
-            </div>
-        </section>
-        -->
     <section class="columns">
         @Html.Partial("_PAnnouncementInfo")
         <div class="col2">

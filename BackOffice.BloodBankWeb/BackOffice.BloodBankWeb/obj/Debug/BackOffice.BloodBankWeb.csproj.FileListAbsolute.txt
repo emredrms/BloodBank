@@ -75,7 +75,6 @@ D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\bin\Mi
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\bin\Microsoft.Data.OData.xml
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\bin\System.Spatial.xml
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\bin\BloodBankData.pdb
-D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\bin\BloodBankData.dll.config
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\bin\Common.pdb
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\bin\TweetSharp.pdb
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\bin\Hammock.ClientProfile.pdb
@@ -106,8 +105,6 @@ D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\bin\ko
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\bin\ru\System.Spatial.resources.dll
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\bin\zh-Hans\System.Spatial.resources.dll
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\bin\zh-Hant\System.Spatial.resources.dll
-D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\obj\Debug\BackOffice.BloodBankWeb.csprojAssemblyReference.cache
-D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\obj\Debug\BackOffice.BloodBankWeb.csproj.CoreCompileInputs.cache
-D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\obj\Debug\BackOffice.BloodBankWeb.csproj.CopyComplete
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\obj\Debug\BackOffice.BloodBankWeb.dll
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\obj\Debug\BackOffice.BloodBankWeb.pdb
+D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\BackOffice.BloodBankWeb\obj\Debug\BackOffice.BloodBankWeb.csprojResolveAssemblyReference.cache

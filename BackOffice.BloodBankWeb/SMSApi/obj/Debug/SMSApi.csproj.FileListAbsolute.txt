@@ -2,8 +2,6 @@ D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\SMSApi\bin\Debug\SMSApi.dll
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\SMSApi\bin\Debug\SMSApi.pdb
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\SMSApi\bin\Debug\MesajPaneli.dll
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\SMSApi\bin\Debug\Newtonsoft.Json.dll
-D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\SMSApi\obj\Debug\SMSApi.csprojAssemblyReference.cache
-D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\SMSApi\obj\Debug\SMSApi.csproj.CoreCompileInputs.cache
-D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\SMSApi\obj\Debug\SMSApi.csproj.CopyComplete
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\SMSApi\obj\Debug\SMSApi.dll
 D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\SMSApi\obj\Debug\SMSApi.pdb
+D:\Project\Live\BloodBank\BackOffice.BloodBankWeb\SMSApi\obj\Debug\SMSApi.csprojResolveAssemblyReference.cache

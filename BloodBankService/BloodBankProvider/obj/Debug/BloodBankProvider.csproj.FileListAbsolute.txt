@@ -16,10 +16,7 @@ D:\Project\Live\BloodBank\BloodBankService\BloodBankProvider\bin\Debug\Common.dl
 D:\Project\Live\BloodBank\BloodBankService\BloodBankProvider\bin\Debug\EntityFramework.dll
 D:\Project\Live\BloodBank\BloodBankService\BloodBankProvider\bin\Debug\Common.pdb
 D:\Project\Live\BloodBank\BloodBankService\BloodBankProvider\bin\Debug\BloodBankData.pdb
-D:\Project\Live\BloodBank\BloodBankService\BloodBankProvider\bin\Debug\BloodBankData.dll.config
 D:\Project\Live\BloodBank\BloodBankService\BloodBankProvider\bin\Debug\EntityFramework.xml
-D:\Project\Live\BloodBank\BloodBankService\BloodBankProvider\obj\Debug\BloodBankProvider.csprojAssemblyReference.cache
-D:\Project\Live\BloodBank\BloodBankService\BloodBankProvider\obj\Debug\BloodBankProvider.csproj.CoreCompileInputs.cache
-D:\Project\Live\BloodBank\BloodBankService\BloodBankProvider\obj\Debug\BloodBankProvider.csproj.CopyComplete
 D:\Project\Live\BloodBank\BloodBankService\BloodBankProvider\obj\Debug\BloodBankProvider.dll
 D:\Project\Live\BloodBank\BloodBankService\BloodBankProvider\obj\Debug\BloodBankProvider.pdb
+D:\Project\Live\BloodBank\BloodBankService\BloodBankProvider\obj\Debug\BloodBankProvider.csprojResolveAssemblyReference.cache

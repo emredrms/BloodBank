@@ -9,7 +9,6 @@ C:\Project\Common\obj\Debug\Common.pdb
 C:\Project\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 D:\Project\Live\BloodBank\Common\bin\Debug\Common.dll
 D:\Project\Live\BloodBank\Common\bin\Debug\Common.pdb
-D:\Project\Live\BloodBank\Common\obj\Debug\Common.csprojAssemblyReference.cache
-D:\Project\Live\BloodBank\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 D:\Project\Live\BloodBank\Common\obj\Debug\Common.dll
 D:\Project\Live\BloodBank\Common\obj\Debug\Common.pdb
+D:\Project\Live\BloodBank\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

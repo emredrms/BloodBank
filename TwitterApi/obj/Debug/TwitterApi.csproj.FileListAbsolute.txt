@@ -23,11 +23,8 @@ D:\Project\Live\BloodBank\TwitterApi\bin\Debug\Hammock.ClientProfile.pdb
 D:\Project\Live\BloodBank\TwitterApi\bin\Debug\Newtonsoft.Json.xml
 D:\Project\Live\BloodBank\TwitterApi\bin\Debug\TweetSharp.pdb
 D:\Project\Live\BloodBank\TwitterApi\bin\Debug\BloodBankData.pdb
-D:\Project\Live\BloodBank\TwitterApi\bin\Debug\BloodBankData.dll.config
 D:\Project\Live\BloodBank\TwitterApi\bin\Debug\EntityFramework.xml
 D:\Project\Live\BloodBank\TwitterApi\bin\Debug\Common.pdb
-D:\Project\Live\BloodBank\TwitterApi\obj\Debug\TwitterApi.csprojAssemblyReference.cache
-D:\Project\Live\BloodBank\TwitterApi\obj\Debug\TwitterApi.csproj.CoreCompileInputs.cache
-D:\Project\Live\BloodBank\TwitterApi\obj\Debug\TwitterApi.csproj.CopyComplete
 D:\Project\Live\BloodBank\TwitterApi\obj\Debug\TwitterApi.dll
 D:\Project\Live\BloodBank\TwitterApi\obj\Debug\TwitterApi.pdb
+D:\Project\Live\BloodBank\TwitterApi\obj\Debug\TwitterApi.csprojResolveAssemblyReference.cache
