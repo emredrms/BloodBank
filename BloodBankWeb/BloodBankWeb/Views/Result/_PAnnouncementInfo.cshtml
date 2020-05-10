@@ -26,6 +26,11 @@
             @Html.TextBoxFor(m => m.Hospital)
             <span id="hospital-validation" class="validation-error">(*) zorunludur</span>
         </p>
+        <p>Duyuru hakkında eklemek istediğiniz notunuz var ise aşağıdaki alanı kullanarak iletebilirsiniz.</p>
+        <p>
+            <label for="text2">Not</label>
+            @Html.TextAreaFor(m => m.Note)
+        </p>
         <p class="submit">
             <button id="preview-message" type="reset" value="2">Gönderilecek Mesajı Göster</button>
             <button id="send-message" type="submit" name="submit" value="2">Mesajı Gönder</button>

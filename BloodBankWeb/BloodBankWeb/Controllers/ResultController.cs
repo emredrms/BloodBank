@@ -26,7 +26,12 @@ namespace BloodBankWeb.Controllers
 
         public ActionResult UpdateAnnouncement(AnnouncementModel model)
         {
-            model.Text = model.Hospital + " Hastanesi'ndeki " + model.PatientName + " için " + model.BloodGroup.Replace("+", " pozitif").Replace("-", " negatif") + " kana ihtiyaç var. " + model.Name + " -  " + model.Phone.Replace("-", "").Replace("(", "").Replace(")", "");
+            model.Text = model.Hospital + " Hastanesi'ndeki " + model.PatientName + " için " + model.BloodGroup.Replace("+", " pozitif").Replace("-", " negatif") + " kana ihtiyaç var. " + model.Name +
+                " -  " + model.Phone.Replace("-", "").Replace("(", "").Replace(")", "");
+
+
+            if (!string.IsNullOrEmpty(model.Note))
+                model.Text += " NOT: " + model.Note;
 
             AnnouncementController.Instance.updateAnnouncementText(model.AnnouncementId, model.Text, false);
 

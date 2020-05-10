@@ -4,7 +4,7 @@
         $('#preview-message').click(function () {
 
             if (validateAnnouncementInputs("0")) {
-                var text = $('#Hospital').val() + " Hastanesi'ndeki " + $('#PatientName').val() + " için " + $('#BloodGroup').val() + " kana ihtiyaç var. " + $('#Name').val()  + "-" + $('#Phone').val();
+                var text = $('#Hospital').val() + " Hastanesi'ndeki " + $('#PatientName').val() + " için " + $('#BloodGroup').val() + " kana ihtiyaç var. " + $('#Name').val() + "-" + $('#Phone').val() + " NOT : " + $('#Note').val();
                 $('#message-content').html(text);
                 $('#message-text').slideDown("slow");
             }
@@ -12,7 +12,7 @@
         });
 
         $('#send-message').click(function () {
-            var text = $('#Hospital').val() + " Hastanesi'ndeki " + $('#PatientName').val() + " için " + $('#BloodGroup').val() + " kana ihtiyaç var. " + $('#Name').val()  + "-" + $('#Phone').val();
+            var text = $('#Hospital').val() + " Hastanesi'ndeki " + $('#PatientName').val() + " için " + $('#BloodGroup').val() + " kana ihtiyaç var. " + $('#Name').val() + "-" + $('#Phone').val() + " NOT : " + $('#Note').val();
             $('#message-content').html(text);
             return validateAnnouncementInputs("1");
         })
